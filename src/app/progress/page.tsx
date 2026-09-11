@@ -117,7 +117,7 @@ export default function ProgressPage() {
                 <span className="font-bold">{actualSets} / {totalPlannedSets} <span className="text-[var(--muted-fg)] font-normal text-xs ml-1">Planned</span></span>
               </div>
               <div className="h-2.5 w-full bg-[var(--secondary)] rounded-full overflow-hidden">
-                <div className="h-full bg-[var(--primary)] rounded-full transition-all duration-1000" style={{ width: \`\${setsPct}%\` }} />
+                <div className="h-full bg-[var(--primary)] rounded-full transition-all duration-1000" style={{ width: `${setsPct}%` }} />
               </div>
             </div>
             <div className="space-y-2">
@@ -126,7 +126,7 @@ export default function ProgressPage() {
                 <span className="font-bold">{daysHitProtein} / 7 <span className="text-[var(--muted-fg)] font-normal text-xs ml-1">Days</span></span>
               </div>
               <div className="h-2.5 w-full bg-[var(--secondary)] rounded-full overflow-hidden">
-                <div className="h-full bg-amber-500 rounded-full transition-all duration-1000" style={{ width: \`\${proteinPct}%\` }} />
+                <div className="h-full bg-amber-500 rounded-full transition-all duration-1000" style={{ width: `${proteinPct}%` }} />
               </div>
             </div>
             <div className="space-y-2">
@@ -135,7 +135,7 @@ export default function ProgressPage() {
                 <span className="font-bold">{daysHitSleep} / 7 <span className="text-[var(--muted-fg)] font-normal text-xs ml-1">Days</span></span>
               </div>
               <div className="h-2.5 w-full bg-[var(--secondary)] rounded-full overflow-hidden">
-                <div className="h-full bg-indigo-500 rounded-full transition-all duration-1000" style={{ width: \`\${sleepPct}%\` }} />
+                <div className="h-full bg-indigo-500 rounded-full transition-all duration-1000" style={{ width: `${sleepPct}%` }} />
               </div>
             </div>
           </CardContent>
@@ -147,11 +147,11 @@ export default function ProgressPage() {
             <CardTitle className="text-lg font-bold flex items-center justify-between">
               <span className="flex items-center"><Scale className="w-5 h-5 mr-2 text-sky-500" /> Weight Trend</span>
               {hasWeightData && weightAnalysis.weeklyRate !== null && (
-                <span className={\`flex items-center text-sm font-bold px-2 py-1 rounded-md \${
+                <span className={`flex items-center text-sm font-bold px-2 py-1 rounded-md ${
                   weightAnalysis.trend === "gaining-optimal" ? "bg-emerald-500/10 text-emerald-500" :
                   weightAnalysis.trend === "gaining-fast" ? "bg-amber-500/10 text-amber-500" :
                   weightAnalysis.trend === "losing" ? "bg-rose-500/10 text-rose-500" : "bg-[var(--secondary)] text-[var(--fg)]"
-                }\`}>
+                }`}>
                   {weightAnalysis.weeklyRate > 0 ? <TrendingUp className="w-3.5 h-3.5 mr-1" /> : weightAnalysis.weeklyRate < 0 ? <TrendingDown className="w-3.5 h-3.5 mr-1" /> : <Minus className="w-3.5 h-3.5 mr-1" />}
                   {weightAnalysis.weeklyRate > 0 ? "+" : ""}{weightAnalysis.weeklyRate.toFixed(2)} kg/wk
                 </span>
@@ -185,8 +185,8 @@ export default function ProgressPage() {
                     return (
                       <div key={i} className="w-full relative group h-full flex items-end">
                         <div 
-                          className={\`w-full rounded-t-sm transition-all duration-500 \${isLast ? "bg-[var(--primary)] shadow-[0_0_15px_var(--primary)]" : "bg-[var(--secondary)] hover:bg-[var(--primary)]/50"}\`}
-                          style={{ height: \`\${heightPct}%\` }}
+                          className={`w-full rounded-t-sm transition-all duration-500 ${isLast ? "bg-[var(--primary)] shadow-[0_0_15px_var(--primary)]" : "bg-[var(--secondary)] hover:bg-[var(--primary)]/50"}`}
+                          style={{ height: `${heightPct}%` }}
                         />
                         <div className="absolute -top-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-[var(--card-bg)] border border-[var(--border-color)] text-[10px] font-bold px-2 py-1 rounded whitespace-nowrap z-10 pointer-events-none">
                           {dataPoint.weightKg} kg
