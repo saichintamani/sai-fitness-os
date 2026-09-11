@@ -14,7 +14,7 @@ import {
 type Tab = "muscle" | "strength" | "adherence" | "physique";
 
 // ── Muscle Volume Calculator ────────────────────────────────
-function calculateMuscleVolume(workoutLogs: typeof import("@/lib/types").WorkoutLog[]) {
+function calculateMuscleVolume(workoutLogs: import("@/lib/types").WorkoutLog[]) {
   const volume: Record<string, { sets: number; exercises: string[]; frequency: number }> = {};
 
   workoutLogs.forEach(workout => {
